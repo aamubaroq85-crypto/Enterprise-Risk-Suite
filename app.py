@@ -227,11 +227,10 @@ with tab_stress:
 
   with col_s2:
     st.markdown("#### 📊 Kalkulator Risk-Adjusted Return")
-    # Simulasi perhitungan metrik performa
     returns = np.random.normal(0.001, 0.02, 100)
     sharpe_ratio = (np.mean(returns) / np.std(returns)) * np.sqrt(
         252
-    )  Annualized
+    )  # Diperbaiki: Ditambahkan tanda komentar #
     sortino_downside = returns[returns < 0]
     sortino_ratio = (
         (np.mean(returns) / np.std(sortino_downside)) * np.sqrt(252)
